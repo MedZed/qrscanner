@@ -46,7 +46,7 @@
       scanner.addListener('scan', function (content) {
         console.log(content);
         $(".scanresult").text(content);
-        $("#confirm").css("display", "true");
+        $("#confirm").css("display","unset");
       });
       Instascan.Camera.getCameras().then(function (cameras) {
         if (cameras.length > 0) {
@@ -60,7 +60,7 @@
       });
 
       function vid() {
-        $("#preview").css("transform", "scaleX(1)");
+        $("#preview").css("transform","scaleX(1)");
       }
     </script>
 </body>
