@@ -24,7 +24,7 @@ video{
   margin: 0;
   width: 100%;
   height: 60vh;
-    border: 3px solid #ffc107;
+    border: 10px solid #ffc107;
     border-radius: 10px;
     background-color: black;
 }
@@ -34,6 +34,7 @@ video{
 
 }
 #res {
+  margin-top: 5px;
   height:15vh;
   font-size: 2rem;
 

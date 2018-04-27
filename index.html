@@ -26,10 +26,10 @@
       <div class="info">
 
 
-        <button id="res" type="button" class="btn btn-lg btn-lg btn-block btn-danger" disabled>
-            <div class="scanresult">
-                Scan Result !
-              </div>
+        <button id="res" type="button" class="btn btn-lg btn-lg btn-block btn-warning" disabled>
+          <div class="scanresult">
+            Scan Result !
+          </div>
         </button>
 
         <button id="confirm" style="display:none;" type="button" class="btn btn-warning  btn-lg btn-block">
@@ -47,7 +47,7 @@
     <script type="text/javascript">
       var audioElement = document.createElement('audio');
       audioElement.setAttribute('src', 'assets/audio/beep.mp3');
-    
+
       let scanner = new Instascan.Scanner({ video: document.getElementById('preview') });
       scanner.addListener('scan', function (content) {
         console.log(content);
