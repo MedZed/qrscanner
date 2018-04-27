@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Instascan</title>
-    <script type="text/javascript" src="lib/js/instascan.min.js"></script>
-    <link rel="stylesheet" href="lib/css/bootstrap.css">
-    <link rel="stylesheet" href="lib/css/style.css">
-  </head>
-  <body>
+
+<head>
+  <title>Instascan</title>
+  <script type="text/javascript" src="lib/js/instascan.min.js"></script>
+  <link rel="stylesheet" href="lib/css/bootstrap.css">
+  <link rel="stylesheet" href="lib/css/style.css">
+</head>
+
+<body>
 
 
 
@@ -15,15 +17,15 @@
 
 
 
-<div id="box" class="card text-center">
+  <div id="box" class="card text-center">
     <div class="card-header">
-        <video id="preview"></video>
+      <video id="preview"></video>
 
     </div>
     <div class="card-body">
-        <div class="scanresult">
+      <div class="scanresult">
+      </div>
     </div>
-  </div>
 
 
     <script src="lib/js/jquery.js"></script>
@@ -36,14 +38,22 @@
         $(".scanresult").text(content);
       });
       Instascan.Camera.getCameras().then(function (cameras) {
-        if (cameras.length > 0) {
+        if (cameras.length = 1) {
+          scanner.start(cameras[0]);
+        } else if (cameras.length > 1) {
           scanner.start(cameras[1]);
+          vid();
         } else {
           console.error('No cameras found.');
         }
       }).catch(function (e) {
         console.error(e);
       });
+
+      function vid (){
+        $("#preview").css( "transform", "scaleX(1)" );
+      }
     </script>
-  </body>
+</body>
+
 </html>
