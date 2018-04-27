@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Instascan</title>
+    <script type="text/javascript" src="lib/js/instascan.min.js"></script>
+    <link rel="stylesheet" href="lib/css/bootstrap.css">
+    <link rel="stylesheet" href="lib/css/style.css">
+  </head>
+  <body>
+
+
+
+
+
+
+
+
+<div id="box" class="card text-center">
+    <div class="card-header">
+        <video id="preview"></video>
+
+    </div>
+    <div class="card-body">
+        <div class="scanresult">
+    </div>
+  </div>
+
+
+    <script src="lib/js/jquery.js"></script>
+    <script src="lib/js/popper.js"></script>
+    <script src="lib/js/bootstrap.js"></script>
+    <script type="text/javascript">
+      let scanner = new Instascan.Scanner({ video: document.getElementById('preview') });
+      scanner.addListener('scan', function (content) {
+        console.log(content);
+        $(".scanresult").text(content);
+      });
+      Instascan.Camera.getCameras().then(function (cameras) {
+        if (cameras.length > 0) {
+          scanner.start(cameras[0]);
+        } else {
+          console.error('No cameras found.');
+        }
+      }).catch(function (e) {
+        console.error(e);
+      });
+    </script>
+  </body>
+</html>
