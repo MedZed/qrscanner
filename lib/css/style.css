@@ -33,6 +33,15 @@ video{
   margin: 0 20px;
 
 }
+#res {
+  height:15vh;
+  font-size: 2rem;
+
+}
+#confirm{
+  height:15vh;
+  font-size: 2rem;
+}
   .card-body{
     font-family: Arial, Helvetica, sans-serif;
     font-size: 2rem;

@@ -23,15 +23,18 @@
 
     </div>
     <div class="card-body">
-        <div class="info">
+      <div class="info">
 
-        <div class="alert alert-secondary" role="alert">
-          <div class="scanresult">
-            Scan Result !
-          </div>
-        </div>
 
-        <button id="confirm" style="display:none;" type="button" class="btn btn-warning  btn-lg btn-block">Confirm</button>
+        <button id="res" type="button" class="btn btn-lg btn-lg btn-block btn-danger" disabled>
+            <div class="scanresult">
+                Scan Result !
+              </div>
+        </button>
+
+        <button id="confirm" style="display:none;" type="button" class="btn btn-warning  btn-lg btn-block">
+          <h1>Confirm</h1>
+        </button>
       </div>
 
 
@@ -46,7 +49,7 @@
       scanner.addListener('scan', function (content) {
         console.log(content);
         $(".scanresult").text(content);
-        $("#confirm").css("display","unset");
+        $("#confirm").css("display", "unset");
       });
       Instascan.Camera.getCameras().then(function (cameras) {
         if (cameras.length > 0) {
@@ -60,7 +63,7 @@
       });
 
       function vid() {
-        $("#preview").css("transform","scaleX(1)");
+        $("#preview").css("transform", "scaleX(1)");
       }
     </script>
 </body>
