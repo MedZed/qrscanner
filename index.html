@@ -45,9 +45,13 @@
     <script src="lib/js/popper.js"></script>
     <script src="lib/js/bootstrap.js"></script>
     <script type="text/javascript">
+      var audioElement = document.createElement('audio');
+      audioElement.setAttribute('src', 'assets/audio/beep.mp3');
+    
       let scanner = new Instascan.Scanner({ video: document.getElementById('preview') });
       scanner.addListener('scan', function (content) {
         console.log(content);
+        audioElement.play();
         $(".scanresult").text(content);
         $("#confirm").css("display", "unset");
       });
