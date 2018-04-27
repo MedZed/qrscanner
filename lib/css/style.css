@@ -29,10 +29,10 @@ video{
     background-color: black;
 }
 
-.btn{
-  
-}
+.info{
+  margin: 0 20px;
 
+}
   .card-body{
     font-family: Arial, Helvetica, sans-serif;
     font-size: 2rem;
